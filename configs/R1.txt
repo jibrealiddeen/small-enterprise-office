@@ -1,0 +1,32 @@
+Current configuration : 1842 bytes
+version 15.0
+service timestamps debug datetime msec
+service timestamps log datetime msec
+hostname R1
+!
+interface Gi0/0
+ no shutdown
+ ip address 192.168.1.1 255.255.255.0
+!
+interface Gi0/1
+ no shutdown
+!
+interface Gi0/2
+ no shutdown
+!
+interface Se0/0/0
+ no shutdown
+!
+interface Se0/0/1
+ no shutdown
+!
+interface Console
+ no shutdown
+ switchport mode access
+!
+ip dhcp pool LAN
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 192.168.1.10
+ lease 1
+end
